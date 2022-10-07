@@ -5,7 +5,6 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        runningTotal = 0
         result = []
         for i, num in enumerate(nums):
             for j, num2 in enumerate(nums[i+1:], i+1):
