@@ -13,7 +13,14 @@ class Solution:
         r = 0
         for i,c in enumerate(s):
             try:
-                r += (-conversion[c]) if  (c == 'I' and s[i + 1] in ["V", "X"]) or (c == 'X' and s[i + 1] in ["L", "C"]) or (c == 'C' and s[i + 1] in ["D", "M"]) else conversion[c]
+                if  c == 'I' and s[i + 1] in ["V", "X"]:
+                    r -= conversion['I']
+                elif c == 'X' and s[i + 1] in ["L", "C"]:
+                    r -= conversion['X']
+                elif c == 'C' and s[i + 1] in ["D", "M"]:
+                    r -= conversion['C']
+                else:
+                    r  += conversion[c]
             except:
                 r += conversion[c]
         return r
