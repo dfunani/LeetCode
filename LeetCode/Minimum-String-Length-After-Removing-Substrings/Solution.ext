@@ -1,0 +1,12 @@
+function minLength(s: string): number {
+    let text: string = "";
+    while (true){
+        text = s.replace("AB", "");
+        text = text.replace("CD", "");
+        if (text.length == s.length){
+            break;
+        }
+        s = text;
+    }
+    return s.length;
+};
